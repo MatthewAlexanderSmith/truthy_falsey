@@ -39,4 +39,9 @@ build/
 # Created by .ignore support plugin (hsz.mobi)
 
 **/.idea
-*.log
+
+
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+/tmp
