@@ -7,13 +7,44 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-User.create(display_name: "test_user", email: "msmithros@hotmail.com", password: "testpassword", password_confirmation:
-    "testpassword", )
+50.times do
+  pw = Faker::Internet.password
+  User.create(
+    display_name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: pw,
+    password_confirmation: pw
+  )
+end
 
-Comment.create(user: User.first)
+100.times do
+  Fact.create(
+    body: Faker::Lorem.sentence,
+    user: User.all.sample
+  )
+end
 
-Fact.create(user: User.first)
+400.times do
+  Evidence.create(
+    url: Faker::Internet.url,
+    support: [true,false].sample,
+    user: User.all.sample,
+    fact: Fact.all.sample
+  )
+end
 
-Evidence.create(user: User.first, fact: Fact.first)
+1000.times do
+  Vote.create(
+    upvote: [true,false].sample,
+    user: User.all.sample,
+    evidence: Evidence.all.sample
+  )
+end
 
-Vote.create(user: User.first, evidence: Evidence.first)
+750.times do
+  Comment.create(
+    body: Faker::Lorem.paragraph,
+    user: User.all.sample,
+    fact: Fact.all.sample
+  )
+end
