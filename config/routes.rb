@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :facts
+
   devise_for :users
 
   devise_scope :user do
