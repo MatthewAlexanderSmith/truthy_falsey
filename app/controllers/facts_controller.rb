@@ -1,6 +1,7 @@
 class FactsController < ApplicationController
 
   def index
+    @facts = Fact.all
   end
 
   def new
@@ -9,10 +10,12 @@ class FactsController < ApplicationController
 
   def show
     @fact = Fact.find(params[:id])
+
   end
 
   def create
     @fact = Fact.new(fact_params)
+    
     @fact.user = current_user
     if @fact.save
       redirect_to fact_path(@fact), notice: 'Pledge successfully updated.'

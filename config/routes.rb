@@ -1,15 +1,5 @@
 Rails.application.routes.draw do
-  get 'facts/new'
-
-  get 'facts/create'
-
-  get 'facts/edit'
-
-  get 'facts/show'
-
-  get 'facts/update'
-
-  get 'facts/destroy'
+  resources :facts
 
   devise_for :users
 
