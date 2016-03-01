@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'facts/new'
+
+  get 'facts/create'
+
+  get 'facts/edit'
+
+  get 'facts/show'
+
+  get 'facts/update'
+
+  get 'facts/destroy'
+
   devise_for :users
 
   devise_scope :user do
