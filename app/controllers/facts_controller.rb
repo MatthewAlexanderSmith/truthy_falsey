@@ -14,7 +14,7 @@ class FactsController < ApplicationController
   end
 
   def create
-    @fact = Fact.new(fact_params)
+    @fact = Fact.create(fact_params)
     
     @fact.user = current_user
     if @fact.save
