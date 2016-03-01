@@ -1,0 +1,11 @@
+<h1>All Facts</h1>
+
+<div class="facts-container">
+  <ul>
+    <% @facts.each do |fact| %>
+    <li>
+      <p><%= fact.body %></p>
+    </li>
+    <% end %>
+  </ul>
+</div>
