@@ -1,19 +1,40 @@
 class FactsController < ApplicationController
+
+  def index
+  end
+
   def new
+    @fact = Fact.new
+  end
+
+  def show
+    @fact = Fact.find(params[:id])
   end
 
   def create
+    @fact = Fact.new(fact_params)
+    @fact.user = current_user
+    if @fact.save
+      redirect_to fact_path(@fact), notice: 'Pledge successfully updated.'
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
-  def show
-  end
 
   def update
   end
 
   def destroy
   end
+
+  private
+
+  def fact_params
+    params.require(:fact).permit(:body, :user_id)
+  end
+
 end
