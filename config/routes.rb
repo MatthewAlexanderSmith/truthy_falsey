@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'facts#index'
+  
   resources :facts
 
   devise_for :users
