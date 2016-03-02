@@ -44,7 +44,8 @@ class FactsController < ApplicationController
   private
 
   def fact_params
-    params.require(:fact).permit(:body, :user_id)
+    params.require(:fact).permit(:body, :user_id,
+                                 evidences_attributes: [:url, :support] )
   end
 
   def load_fact
