@@ -1,7 +1,6 @@
 class FactsController < ApplicationController
   before_action :load_fact, only: [:show, :edit, :update, :destroy]
 
-
   def index
     @facts = Fact.all
   end
@@ -12,12 +11,11 @@ class FactsController < ApplicationController
 
   def show
     @fact = Fact.find(params[:id])
-
   end
 
   def create
     @fact = Fact.create(fact_params)
-    
+
     @fact.user = current_user
     if @fact.save
       redirect_to fact_path(@fact), notice: 'Fact successfully created.'
@@ -50,5 +48,4 @@ class FactsController < ApplicationController
   def load_fact
     @fact = Fact.find(params[:id])
   end
-
 end

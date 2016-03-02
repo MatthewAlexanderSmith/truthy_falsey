@@ -6,7 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
 50.times do
   pw = Faker::Internet.password
   User.create(
@@ -27,7 +26,7 @@ end
 400.times do
   Evidence.create(
     url: Faker::Internet.url,
-    support: [true,false].sample,
+    support: [true, false].sample,
     user: User.all.sample,
     fact: Fact.all.sample
   )
@@ -35,7 +34,7 @@ end
 
 1000.times do
   Vote.create(
-    upvote: [true,false].sample,
+    upvote: [true, false].sample,
     user: User.all.sample,
     evidence: Evidence.all.sample
   )
