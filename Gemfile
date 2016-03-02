@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.3'
+ruby '2.2.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
@@ -23,6 +23,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'cocoon'
+
+# HTML5/CSS Framework
+gem 'bourbon'
+gem 'neat'
+gem 'bitters'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
