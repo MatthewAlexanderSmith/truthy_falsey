@@ -38,14 +38,14 @@ class FactsController < ApplicationController
 
   def destroy
     @fact.destroy
-    redirect_to facts_url notice: "Fact Successfully Deleted"
+    redirect_to facts_url notice: 'Fact Successfully Deleted'
   end
 
   private
 
   def fact_params
     params.require(:fact).permit(:body, :user_id,
-                                 evidences_attributes: [:url, :support] )
+                                 evidences_attributes: [:url, :support])
   end
 
   def load_fact
