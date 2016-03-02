@@ -29,8 +29,8 @@ Style/Documentation:
   Enabled: false
 
 AllCops:
-  Excludes:
+  Exclude:
     - config/unicorn.rb
-    - db/**
+    - db/**/*
   Rails:
     Enabled: true

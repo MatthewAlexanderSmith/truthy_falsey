@@ -4,7 +4,6 @@ class Fact < ActiveRecord::Base
 
   accepts_nested_attributes_for :evidences, reject_if: :all_blank, allow_destroy: true
 
-
   def supporting_evidence
     evidences.where(support: true)
   end
