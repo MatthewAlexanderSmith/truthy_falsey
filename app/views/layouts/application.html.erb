@@ -8,8 +8,20 @@
 </head>
 <body>
 <div>
-  <%= link_to "New Fact", new_fact_path %> | <%= link_to "Facts Index", facts_path %>
+  <%= link_to "Facts Index", facts_path %> | <%= link_to "New Fact", new_fact_path %>
+  <br>
+  <br>
 </div>
+
+<% if user_signed_in? %>
+    <div>
+      <%= link_to('Logout', destroy_user_session_path, :method => :delete)%>
+    </div>
+<% else %>
+    <div>
+      <%= link_to('Login', new_user_session_path)  %>
+    </div>
+<% end %>
 
 <%= yield %>
 

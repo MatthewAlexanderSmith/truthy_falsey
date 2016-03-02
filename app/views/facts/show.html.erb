@@ -8,11 +8,8 @@
   <p>
     <%= @fact.body %>
   </p>
-
 </div>
 
-<%= puts "#{current_user} this is current user" %>
-<%= puts "#{User.find(@fact.user_id)} this is User.find(@fact.user_id)" %>
 <% if current_user == User.find(@fact.user_id)  %>
   <%= link_to "Delete Fact", fact_path(@fact), method: :delete, date: {confirm:"Are you sure you want to delete this
   fact?"} %>
