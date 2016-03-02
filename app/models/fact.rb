@@ -6,10 +6,10 @@ class Fact < ActiveRecord::Base
 
 
   def supporting_evidence
-    self.evidences.where(support: true)
+    evidences.where(support: true)
   end
 
   def refuting_evidence
-    self.evidences.where(support: false)
+    evidences.where(support: false)
   end
 end

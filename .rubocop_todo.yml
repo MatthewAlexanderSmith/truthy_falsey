@@ -27,3 +27,10 @@ Style/ClassAndModuleChildren:
 # Offense count: 17
 Style/Documentation:
   Enabled: false
+
+AllCops:
+  Excludes:
+    - config/unicorn.rb
+    - db/**
+  Rails:
+    Enabled: true

@@ -5,10 +5,10 @@ class Evidence < ActiveRecord::Base
 
 
   def upvotes
-    self.votes.where(upvote: true).count
+    votes.where(upvote: true).count
   end
 
   def downvotes
-    self.votes.where(upvote: false).count
+    votes.where(upvote: false).count
   end
 end
