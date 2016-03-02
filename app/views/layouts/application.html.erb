@@ -8,7 +8,8 @@
 </head>
 <body>
 
-<div>
+<div class="wrapper">
+
   <p><%= link_to "Facts Index", facts_path %> | <%= link_to "New Fact", new_fact_path %></p>
 
   <% if user_signed_in? %>
@@ -16,9 +17,6 @@
   <% else %>
     <p><%= link_to('Login', new_user_session_path)  %></p>
   <% end %>
-</div>
-
-<div class="wrapper">
 
 <%= yield %>
 
