@@ -3,4 +3,13 @@ class Fact < ActiveRecord::Base
   has_many :evidences
 
   accepts_nested_attributes_for :evidences, reject_if: :all_blank, allow_destroy: true
+
+
+  def supporting_evidence
+    self.evidences.where(support: true)
+  end
+
+  def refuting_evidence
+    self.evidences.where(support: false)
+  end
 end
