@@ -24,6 +24,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'cocoon'
 
+# HTML5/CSS Framework
+gem 'bourbon'
+gem 'neat'
+gem 'bitters'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
