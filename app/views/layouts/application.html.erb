@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div>
+  <%= link_to "New Fact", new_fact_path %> | <%= link_to "Facts Index", facts_path %>
+</div>
 
 <%= yield %>
 

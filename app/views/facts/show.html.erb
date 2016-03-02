@@ -1,5 +1,9 @@
 <h1>Facts#show</h1>
 
-<p>
+<div>
+  <%= "#{User.find(@fact.user_id).display_name} posted this fact" %>
+</div>
+
+<div>
   <%= @fact.body %>
-</p>
+</div>
