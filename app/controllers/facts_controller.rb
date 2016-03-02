@@ -37,6 +37,8 @@ class FactsController < ApplicationController
   end
 
   def destroy
+    @fact.destroy
+    redirect_to facts_url notice: "Fact Successfully Deleted"
   end
 
   private
